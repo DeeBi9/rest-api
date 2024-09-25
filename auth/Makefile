@@ -1,7 +1,7 @@
 # Variables
 PROTOC=protoc
 PROTO_SRC=protos
-OUT_DIR=protos/auth
+OUT_DIR=protos/
 PROTO_FILES=$(PROTO_SRC)/auth.proto
 
 # Default target

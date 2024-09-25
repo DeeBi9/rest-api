@@ -1,16 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/Deepanshuisjod/rest-api/protos/auth;authpb";
+option go_package = "github.com/Deepanshuisjod/rest-api/auth";
 
 package auth;
 
-// Auth service definition
 service Auth {
-    rpc Test(HelloRequest) returns (HelloResponse);
-    rpc Login(LoginRequest) returns (LoginResponse);
-    rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
-    rpc Logout(LogoutRequest) returns (LogoutResponse);
-
+    rpc Greeting(HelloRequest) returns (HelloResponse);
 }
 
 message HelloRequest {
@@ -21,30 +16,3 @@ message HelloResponse {
     string message = 1;
 }
 
-// Messages for Login
-message LoginRequest {
-    int32 Userid = 1;
-    string Password = 2;
-    string Role = 3;
-}
-
-message LoginResponse {
-    string Token = 1;
-}
-
-// Define additional messages for other RPC methods
-message ValidateTokenRequest {
-    string Token = 1;
-}
-
-message ValidateTokenResponse {
-    bool IsValid = 1;
-}
-
-message LogoutRequest {
-    string Token = 1;
-}
-
-message LogoutResponse {
-    bool Success = 1;
-}
